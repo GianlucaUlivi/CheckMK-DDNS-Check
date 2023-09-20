@@ -16,9 +16,11 @@ def main(hostname: str, nameserver: str) -> str:
 
     # Verify that DNS Result and Current IP matches
     if dns_answer[0].to_text() == current_ip:
-        return f"0; DDNS result matches current IP Address ({dns_answer[0].to_text()})"
+        print(f"0; DDNS result matches current IP Address ({dns_answer[0].to_text()})")
+        raise SystemExit(0)
     else:
-        return f"1; Current IP: {current_ip}, DDNS Result: {dns_answer[0].to_text()}"
+        print("Current IP: {current_ip}, DDNS Result: {dns_answer[0].to_text()}")
+        raise SystemExit(2)
 
 
 if __name__ == "__main__":
@@ -27,4 +29,4 @@ if __name__ == "__main__":
     parser.add_argument("nameserver")
     args = parser.parse_args()
 
-    print(main(args.hostname, args.nameserver))
+    main(args.hostname, args.nameserver)
