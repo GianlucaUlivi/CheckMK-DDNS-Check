@@ -19,7 +19,9 @@ def main(hostname: str, nameserver: str) -> str:
         print(f"DDNS result matches current IP Address ({dns_answer[0].to_text()})")
         raise SystemExit(0)
     else:
-        print("Current IP: {current_ip}, DDNS Result: {dns_answer[0].to_text()}")
+        print("DDNS result and current IP Address mismatch!\n"
+              "Current IP: {current_ip}\n"
+              "DDNS Result: {dns_answer[0].to_text()}")
         raise SystemExit(2)
 
 
