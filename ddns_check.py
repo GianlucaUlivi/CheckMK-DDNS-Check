@@ -3,7 +3,7 @@ import dns.resolver
 import argparse
 
 
-def main(hostname: str, nameserver: str) -> str:
+def main(hostname: str, nameserver: str):
     # Get current IP from host connection
     current_ip = requests.get("https://ifconfig.me/").text
 
