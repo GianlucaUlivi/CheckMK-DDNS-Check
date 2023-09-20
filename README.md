@@ -6,7 +6,7 @@ Copy the python file into your CheckMK host at this location:
 `/opt/omd/sites/<SITE>/local/lib/nagios/plugins/ddns_check.py`  
 
 Install or Update requests and dnspython via pip:  
-`pip install requests dnspython`  
+`pip3 install requests dnspython`  
 
 ### Test and Verify
 You can test and verify the plugin by executing it directly with Python via the CLI:  
