@@ -16,12 +16,14 @@ def main(hostname: str, nameserver: str):
 
     # Verify that DNS Result and Current IP matches
     if dns_answer[0].to_text() == current_ip:
-        print(f"DDNS result matches current IP Address ({dns_answer[0].to_text()})")
+        print(f"DDNS result matches current IP Address\n"
+              f"Current IP: {current_ip}\n"
+              f"DDNS Result: {dns_answer[0].to_text()}")
         raise SystemExit(0)
     else:
-        print("DDNS result and current IP Address mismatch!\n"
-              "Current IP: {current_ip}\n"
-              "DDNS Result: {dns_answer[0].to_text()}")
+        print(f"DDNS result and current IP Address mismatch!\n"
+              f"Current IP: {current_ip}\n"
+              f"DDNS Result: {dns_answer[0].to_text()}")
         raise SystemExit(2)
 
 
